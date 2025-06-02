@@ -1,0 +1,19 @@
+dotnet add package Microsoft.EntityFrameworkCore
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+dotnet add package Microsoft.EntityFrameworkCore.Design
+
+
+dotnet ef dbcontext scaffold "Server=eworxlap-378;Database=HospitalDB;Integrated Security=True;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -o Data -c HospitalDbContext -f --project HospitalManagement.Infrastructure --context-dir Data --no-onconfiguring --use-database-names"
+
+dotnet ef dbcontext scaffold "Server=eworxlap-378;Database=HospitalDB;Integrated Security=True;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -o Data -c HospitalDbContext -f --context-dir Data --no-onconfiguring --use-database-names
+
+
+
+dotnet ef dbcontext scaffold "Server=eworxlap-378;Database=HospitalDB;Integrated Security=True;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer \
+    -o Data -c HospitalDbContext -f --project HospitalManagement.Infrastructure \
+    --context-dir Data --no-onconfiguring --use-database-names
+
+
+
+
+cmd /c "dotnet ef dbcontext scaffold ""Server=eworxlap-378;Database=HospitalDB;Integrated Security=True;TrustServerCertificate=True;"" Microsoft.EntityFrameworkCore.SqlServer -o Data -c HospitalDbContext -f --project HospitalManagement.Infrastructure --context-dir Data --no-onconfiguring --use-database-names"
