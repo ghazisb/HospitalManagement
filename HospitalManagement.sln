@@ -7,11 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HospitalManagement.API", "H
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HospitalManagement.Application", "HospitalManagement.Application\HospitalManagement.Application.csproj", "{7F904518-31DB-4B06-9139-0A951A7E2051}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HospitalManagement.Domain", "HospitalManagement.Domain\HospitalManagement.Domain.csproj", "{56A7393B-8C14-4C3A-BAD1-A364A813EB29}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HospitalManagement.Infrastructure", "HospitalManagement.Infrastructure\HospitalManagement.Infrastructure.csproj", "{E8A8D12B-05E7-49F5-B9F3-9AB2AA3126B4}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HospitalManagement.Tests", "HospitalManagement.Tests\HospitalManagement.Tests.csproj", "{3A7D4B3F-6BD5-4F11-BB0E-3CA54DF48E77}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HospitalManagement.Common", "HospitalManagement.Common\HospitalManagement.Common.csproj", "{112002A5-FD2A-42A8-8A0B-90AD6CCF9DFE}"
 EndProject
@@ -29,18 +25,10 @@ Global
 		{7F904518-31DB-4B06-9139-0A951A7E2051}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F904518-31DB-4B06-9139-0A951A7E2051}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F904518-31DB-4B06-9139-0A951A7E2051}.Release|Any CPU.Build.0 = Release|Any CPU
-		{56A7393B-8C14-4C3A-BAD1-A364A813EB29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{56A7393B-8C14-4C3A-BAD1-A364A813EB29}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{56A7393B-8C14-4C3A-BAD1-A364A813EB29}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{56A7393B-8C14-4C3A-BAD1-A364A813EB29}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E8A8D12B-05E7-49F5-B9F3-9AB2AA3126B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E8A8D12B-05E7-49F5-B9F3-9AB2AA3126B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E8A8D12B-05E7-49F5-B9F3-9AB2AA3126B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E8A8D12B-05E7-49F5-B9F3-9AB2AA3126B4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3A7D4B3F-6BD5-4F11-BB0E-3CA54DF48E77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3A7D4B3F-6BD5-4F11-BB0E-3CA54DF48E77}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3A7D4B3F-6BD5-4F11-BB0E-3CA54DF48E77}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3A7D4B3F-6BD5-4F11-BB0E-3CA54DF48E77}.Release|Any CPU.Build.0 = Release|Any CPU
 		{112002A5-FD2A-42A8-8A0B-90AD6CCF9DFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{112002A5-FD2A-42A8-8A0B-90AD6CCF9DFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{112002A5-FD2A-42A8-8A0B-90AD6CCF9DFE}.Release|Any CPU.ActiveCfg = Release|Any CPU

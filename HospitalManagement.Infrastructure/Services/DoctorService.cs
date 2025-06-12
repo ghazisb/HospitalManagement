@@ -37,39 +37,60 @@ namespace HospitalManagement.Domain.Services
 
         public async Task<DoctorDto> CreateAsync(DoctorDto dto)
         {
-            var doctor = new Doctor
+            try
             {
-                FirstName = dto.FirstName,
-                LastName = dto.LastName,
-                Specialty = dto.Specialty,
-                Phone = dto.Phone
-            };
-            _context.Doctors.Add(doctor);
-            await _context.SaveChangesAsync();
-            dto.Id = doctor.Id;
+                var doctor = new Doctor
+                {
+                    FirstName = dto.FirstName,
+                    LastName = dto.LastName,
+                    Specialty = dto.Specialty,
+                    Phone = dto.Phone
+                };
+                _context.Doctors.Add(doctor);
+                await _context.SaveChangesAsync();
+                dto.Id = doctor.Id;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
             return dto;
         }
 
         public async Task<DoctorDto> UpdateAsync(DoctorDto dto)
         {
-            var doctor = await _context.Doctors.FindAsync(dto.Id);
-            if (doctor == null) return null!;
+            try
+            {
+                var doctor = await _context.Doctors.FindAsync(dto.Id);
+                if (doctor == null) return null!;
 
-            doctor.FirstName = dto.FirstName;
-            doctor.LastName = dto.LastName;
-            doctor.Specialty = dto.Specialty;
-            doctor.Phone = dto.Phone;
+                doctor.FirstName = dto.FirstName;
+                doctor.LastName = dto.LastName;
+                doctor.Specialty = dto.Specialty;
+                doctor.Phone = dto.Phone;
 
-            await _context.SaveChangesAsync();
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
             return dto;
         }
 
         public async Task<bool> DeleteAsync(int id)
         {
-            var doctor = await _context.Doctors.FindAsync(id);
-            if (doctor == null) return false;
-            _context.Doctors.Remove(doctor);
-            await _context.SaveChangesAsync();
+            try
+            {
+                var doctor = await _context.Doctors.FindAsync(id);
+                if (doctor == null) return false;
+                _context.Doctors.Remove(doctor);
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
             return true;
         }
     }

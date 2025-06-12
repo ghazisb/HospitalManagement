@@ -6,6 +6,8 @@ public partial class MedicalRecord
     public int Id { get; set; }
 
     public int? PatientId { get; set; }
+    public int? DoctorId { get; set; }
+    
 
     public string? Diagnosis { get; set; }
 
@@ -14,4 +16,5 @@ public partial class MedicalRecord
     public DateTime? RecordDate { get; set; }
 
     public virtual Patient? Patient { get; set; }
+    public virtual Doctor? Doctor { get; set; }
 }

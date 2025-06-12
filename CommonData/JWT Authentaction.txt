@@ -1,0 +1,10 @@
+
+Backend
+dotnet add package Microsoft.AspNetCore.Authentication.JwtBearer
+
+dotnet add "D:\Official\Training Material\Other\4.React\Projects\REAL DEMOs\HospitalManagement\HospitalManagement.API\HospitalManagement.API.csproj" package Microsoft.AspNetCore.Authentication.JwtBearer
+
+
+Frontend
+npm install react-router-dom
+

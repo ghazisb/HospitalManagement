@@ -36,37 +36,60 @@ namespace HospitalManagement.Infrastructure.Services
 
         public async Task<AppointmentDto> CreateAsync(AppointmentDto dto)
         {
-            var appointment = new Appointment
+            try
             {
-                PatientId = dto.PatientId,
-                DoctorId = dto.DoctorId,
-                AppointmentDate = dto.AppointmentDate,
-                Reason = dto.Reason
-            };
-            _context.Appointments.Add(appointment);
-            await _context.SaveChangesAsync();
-            dto.Id = appointment.Id;
+                Console.WriteLine(dto.AppointmentDate);
+                var appointment = new Appointment
+                {
+                    PatientId = dto.PatientId,
+                    DoctorId = dto.DoctorId,
+                    AppointmentDate = dto.AppointmentDate,
+                    Reason = dto.Reason
+                };
+                _context.Appointments.Add(appointment);
+                await _context.SaveChangesAsync();
+                dto.Id = appointment.Id;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
             return dto;
         }
 
+
         public async Task<AppointmentDto> UpdateAsync(AppointmentDto dto)
         {
-            var appointment = await _context.Appointments.FindAsync(dto.Id);
-            if (appointment == null) return null!;
-            appointment.PatientId = dto.PatientId;
-            appointment.DoctorId = dto.DoctorId;
-            appointment.AppointmentDate = dto.AppointmentDate;
-            appointment.Reason = dto.Reason;
-            await _context.SaveChangesAsync();
+            try
+            {
+                var appointment = await _context.Appointments.FindAsync(dto.Id);
+                if (appointment == null) return null!;
+                appointment.PatientId = dto.PatientId;
+                appointment.DoctorId = dto.DoctorId;
+                appointment.AppointmentDate = dto.AppointmentDate;
+                appointment.Reason = dto.Reason;
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
             return dto;
         }
 
         public async Task<bool> DeleteAsync(int id)
         {
-            var appointment = await _context.Appointments.FindAsync(id);
-            if (appointment == null) return false;
-            _context.Appointments.Remove(appointment);
-            await _context.SaveChangesAsync();
+            try
+            {
+                var appointment = await _context.Appointments.FindAsync(id);
+                if (appointment == null) return false;
+                _context.Appointments.Remove(appointment);
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
             return true;
         }
     }

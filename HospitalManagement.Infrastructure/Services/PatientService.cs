@@ -41,42 +41,63 @@ namespace HospitalManagement.Infrastructure.Services
 
         public async Task<PatientDto> CreateAsync(PatientDto dto)
         {
-            var patient = new Patient
+            try
             {
-                FirstName = dto.FirstName,
-                LastName = dto.LastName,
-                Gender = dto.Gender,
-                DateOfBirth = dto.DateOfBirth,
-                Phone = dto.Phone,
-                Address = dto.Address,
-            };
-            _context.Patients.Add(patient);
-            await _context.SaveChangesAsync();
-            dto.Id = patient.Id;
+                var patient = new Patient
+                {
+                    FirstName = dto.FirstName,
+                    LastName = dto.LastName,
+                    Gender = dto.Gender,
+                    DateOfBirth = dto.DateOfBirth,
+                    Phone = dto.Phone,
+                    Address = dto.Address,
+                };
+                _context.Patients.Add(patient);
+                await _context.SaveChangesAsync();
+                dto.Id = patient.Id;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
             return dto;
         }
 
         public async Task<PatientDto> UpdateAsync(PatientDto dto)
         {
-            var patient = await _context.Patients.FindAsync(dto.Id);
-            if (patient == null) return null!;
+            try
+            {
+                var patient = await _context.Patients.FindAsync(dto.Id);
+                if (patient == null) return null!;
 
-            patient.FirstName = dto.FirstName;
-            patient.LastName = dto.LastName;
-            patient.Gender = dto.Gender;
-            patient.DateOfBirth = dto.DateOfBirth;
-            patient.Phone = dto.Phone;
-            patient.Address = dto.Address;
-            await _context.SaveChangesAsync();
+                patient.FirstName = dto.FirstName;
+                patient.LastName = dto.LastName;
+                patient.Gender = dto.Gender;
+                patient.DateOfBirth = dto.DateOfBirth;
+                patient.Phone = dto.Phone;
+                patient.Address = dto.Address;
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
             return dto;
         }
 
         public async Task<bool> DeleteAsync(int id)
         {
-            var patient = await _context.Patients.FindAsync(id);
-            if (patient == null) return false;
-            _context.Patients.Remove(patient);
-            await _context.SaveChangesAsync();
+            try
+            {
+                var patient = await _context.Patients.FindAsync(id);
+                if (patient == null) return false;
+                _context.Patients.Remove(patient);
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
             return true;
         }
     }

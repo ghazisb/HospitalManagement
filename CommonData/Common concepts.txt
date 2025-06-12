@@ -1,0 +1,31 @@
+
+
+register()	Registers an input or select element
+handleSubmit()	Handles form submission
+formState.errors	Provides form validation errors
+reset()	Resets the form to its initial values
+watch()	Observes input value changes
+setValue()	Manually sets an input value
+
+
+React Hook Form only triggers its built-in validation for fields it knows about — and custom date picker (CustomDatePicker) is not registered using react-hook-form
+
+react-router-dom is the standard routing library for React applications that run in the browser. It enables client-side routing, allowing you to navigate between different components (pages) without reloading the page — giving your app a single-page application (SPA) experience.
+
+
+🔧 What is react-scripts?
+react-scripts is a package used internally by Create React App (CRA) — the most popular toolchain for quickly setting up a modern React app with zero configuration.
+
+
+react-toastify is a popular notification library for React that lets you display elegant, customizable toast messages (temporary pop-up alerts) in your app with minimal setup.
+
+It’s great for showing:
+
+Success messages
+
+Error alerts
+
+Info/warning toasts
+
+Any feedback that should auto-dismiss
+

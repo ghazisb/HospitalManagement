@@ -1,0 +1,25 @@
+dotnet add package Serilog.AspNetCore
+dotnet add package Serilog.Sinks.File
+dotnet add package Serilog.Sinks.MSSqlServer
+
+
+dotnet add "D:\Official\Training Material\Other\4.React\Projects\REAL DEMOs\HospitalManagement\HospitalManagement.API\HospitalManagement.API.csproj" package Serilog.AspNetCore
+
+dotnet add "D:\Official\Training Material\Other\4.React\Projects\REAL DEMOs\HospitalManagement\HospitalManagement.API\HospitalManagement.API.csproj" package Serilog.Sinks.File
+
+dotnet add "D:\Official\Training Material\Other\4.React\Projects\REAL DEMOs\HospitalManagement\HospitalManagement.API\HospitalManagement.API.csproj" package Serilog.Sinks.MSSqlServer
+
+
+
+
+CREATE TABLE Logs (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    Message NVARCHAR(MAX),
+    MessageTemplate NVARCHAR(MAX),
+    Level NVARCHAR(128),
+    TimeStamp DATETIME,
+    Exception NVARCHAR(MAX),
+    Properties NVARCHAR(MAX),
+    RequestPath NVARCHAR(200),
+    UserName NVARCHAR(100)
+);
