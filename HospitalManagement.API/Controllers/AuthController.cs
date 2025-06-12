@@ -31,29 +31,29 @@ namespace HospitalManagement.API.Controllers
             _jwtSettings = jwtSettings.Value;
         }
 
-        [HttpPost("login1")]
-        public IActionResult Login1([FromBody] LoginRequest request)
-        {
-            // NOTE: Replace this with real DB lookup or user service
-            if (request.Username != "admin" || request.Password != "password")
-                return Unauthorized();
+        //[HttpPost("login1")]
+        //public IActionResult Login1([FromBody] LoginRequest request)
+        //{
+        //    // NOTE: Replace this with real DB lookup or user service
+        //    if (request.Username != "admin" || request.Password != "password")
+        //        return Unauthorized();
 
-            var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.UTF8.GetBytes(_jwtSettings.SecretKey);
-            var tokenDescriptor = new SecurityTokenDescriptor
-            {
-                Subject = new ClaimsIdentity(new[] {
-                new Claim(ClaimTypes.Name, request.Username)
-            }),
-                Expires = DateTime.UtcNow.AddMinutes(_jwtSettings.ExpiryMinutes),
-                Issuer = _jwtSettings.Issuer,
-                Audience = _jwtSettings.Audience,
-                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
-            };
+        //    var tokenHandler = new JwtSecurityTokenHandler();
+        //    var key = Encoding.UTF8.GetBytes(_jwtSettings.SecretKey);
+        //    var tokenDescriptor = new SecurityTokenDescriptor
+        //    {
+        //        Subject = new ClaimsIdentity(new[] {
+        //        new Claim(ClaimTypes.Name, request.Username)
+        //    }),
+        //        Expires = DateTime.UtcNow.AddMinutes(_jwtSettings.ExpiryMinutes),
+        //        Issuer = _jwtSettings.Issuer,
+        //        Audience = _jwtSettings.Audience,
+        //        SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+        //    };
 
-            var token = tokenHandler.CreateToken(tokenDescriptor);
-            return Ok(new { token = tokenHandler.WriteToken(token), username = request.Username });
-        }
+        //    var token = tokenHandler.CreateToken(tokenDescriptor);
+        //    return Ok(new { token = tokenHandler.WriteToken(token), username = request.Username });
+        //}
 
         [HttpPost("login")]
         public IActionResult Login([FromBody] LoginRequest request)
