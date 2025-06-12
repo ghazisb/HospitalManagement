@@ -9,17 +9,10 @@ public partial class HospitalDbContext : DbContext
     {
     }
 
-    //public virtual DbSet<Appointment> Appointments { get; set; }
-
-    //public virtual DbSet<Doctor> Doctors { get; set; }
-
-    //public virtual DbSet<MedicalRecord> MedicalRecords { get; set; }
-
-    //public virtual DbSet<Patient> Patients { get; set; }
-
     public DbSet<Patient> Patients => Set<Patient>();
     public DbSet<Doctor> Doctors => Set<Doctor>();
     public DbSet<Appointment> Appointments => Set<Appointment>();
+    public DbSet<MedicalRecord> MedicalRecords => Set<MedicalRecord>();
 
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -79,3 +72,12 @@ public partial class HospitalDbContext : DbContext
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 }
+
+
+//public virtual DbSet<Appointment> Appointments { get; set; }
+
+//public virtual DbSet<Doctor> Doctors { get; set; }
+
+//public virtual DbSet<MedicalRecord> MedicalRecords { get; set; }
+
+//public virtual DbSet<Patient> Patients { get; set; }

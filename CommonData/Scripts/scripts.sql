@@ -6,7 +6,7 @@ CREATE TABLE Patients (
     LastName NVARCHAR(100),
     DateOfBirth DATE,
     Gender NVARCHAR(10),
-    Phone NVARCHAR(15),
+    Phone NVARCHAR(18),
     Address NVARCHAR(255),
 	Age INT NULL
 );
@@ -16,7 +16,7 @@ CREATE TABLE Doctors (
     FirstName NVARCHAR(100),
     LastName NVARCHAR(100),
     Specialty NVARCHAR(100),
-    Phone NVARCHAR(15)
+    Phone NVARCHAR(18)
 );
 
 CREATE TABLE Appointments (
@@ -30,6 +30,7 @@ CREATE TABLE Appointments (
 CREATE TABLE MedicalRecords (
     Id INT PRIMARY KEY IDENTITY,
     PatientId INT FOREIGN KEY REFERENCES Patients(Id),
+    DoctorId INT FOREIGN KEY REFERENCES Doctors(Id),
     Diagnosis NVARCHAR(255),
     Treatment NVARCHAR(255),
     RecordDate DATETIME
@@ -49,20 +50,29 @@ INSERT INTO Doctors (FirstName, LastName, Specialty, Phone) VALUES
 ('Dr. Nadia', 'Hassan', 'Pediatrician', '03661234567');
 
 
-GO
+--GO
+--TRUNCATE TABLE Appointments
+--GO
 INSERT INTO Appointments (PatientId, DoctorId, AppointmentDate, Reason) VALUES
-(1, 1, '2025-06-01 10:00:00', 'Chest pain and shortness of breath'),
-(2, 2, '2025-06-02 11:30:00', 'Skin rash and irritation'),
-(3, 3, '2025-06-03 09:00:00', 'Routine child check-up');
+(1, 1, '2025-06-04 10:00:00', 'Chest pain and shortness of breath'),
+(2, 2, '2025-06-18 11:30:00', 'Skin rash and irritation'),
+(4, 4, '2025-06-13 09:00:00', 'Routine child check-up'),
+(1, 3, '2025-06-11 09:00:00', 'Routine child check-up'),
+(4, 2, '2025-06-08 09:00:00', 'Routine child check-up')
 
-
-GO
-INSERT INTO MedicalRecords (PatientId, Diagnosis, Treatment, RecordDate) VALUES
-(1, 'Angina', 'Prescribed beta-blockers and advised ECG', '2025-06-01 11:00:00'),
-(2, 'Eczema', 'Topical steroid cream prescribed', '2025-06-02 12:00:00'),
-(3, 'Healthy', 'Vaccination completed', '2025-06-03 10:00:00');
 
 
 GO
+INSERT INTO MedicalRecords (PatientId, DoctorId, Diagnosis, Treatment, RecordDate) VALUES
+(1, 2, 'Angina', 'Prescribed beta-blockers and advised ECG', '2025-06-01 11:00:00'),
+(2, 1, 'Eczema', 'Topical steroid cream prescribed', '2025-06-02 12:00:00'),
+(3, 4, 'Healthy', 'Topical steroid cream prescribed', '2025-06-03 10:00:00');
 
-ALTER TABLE dbo.Patients ADD Age INT NULL;
+GO
+
+
+ALTER TABLE [Doctors]
+ALTER COLUMN [Phone] VARCHAR(18) NOT NULL;
+
+ALTER TABLE [Patients]
+ALTER COLUMN [Phone] VARCHAR(18) NOT NULL;

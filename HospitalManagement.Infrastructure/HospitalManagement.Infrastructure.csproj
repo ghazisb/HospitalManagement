@@ -9,7 +9,6 @@
   <ItemGroup>
     <ProjectReference Include="..\HospitalManagement.Application\HospitalManagement.Application.csproj" />
     <ProjectReference Include="..\HospitalManagement.Common\HospitalManagement.Common.csproj" />
-    <ProjectReference Include="..\HospitalManagement.Domain\HospitalManagement.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>

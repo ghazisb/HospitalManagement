@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -7,13 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.17" />
+    <PackageReference Include="Serilog.AspNetCore" Version="9.0.0" />
+    <PackageReference Include="Serilog.Sinks.File" Version="7.0.0" />
+    <PackageReference Include="Serilog.Sinks.MSSqlServer" Version="8.2.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\HospitalManagement.Application\HospitalManagement.Application.csproj" />
     <ProjectReference Include="..\HospitalManagement.Common\HospitalManagement.Common.csproj" />
-    <ProjectReference Include="..\HospitalManagement.Domain\HospitalManagement.Domain.csproj" />
     <ProjectReference Include="..\HospitalManagement.Infrastructure\HospitalManagement.Infrastructure.csproj" />
   </ItemGroup>
 
